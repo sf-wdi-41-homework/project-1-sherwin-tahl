@@ -20,6 +20,9 @@ function cookieLogIn(req, res){
 //PUT request for updating user weight in his Profile data and create a Weight data history.
 function updateWeight(req, res){
   console.log("req.body: ", req.body)
+    // Also you're using both Mongoose and Mongo when you really only need
+    // Mongoose.
+    // Try db.Profile.findOneAndUpdate next time
     db.Profile.updateOne({userId:req.body.userId},{weight:req.body.weight}, function(err,success){
       if(err){return err};
       if(!success){console.log("user not found")}
@@ -120,6 +123,7 @@ function logIn(req, res) {
           res.send("login error");
         }else{
         console.log("success.token: ", success.token)
+            // Nice work with Bcrypt :)
         bcrypt.compare(passwordIn, success.token, function(err, isMatch) {
             if (err) {
                 console.log(err)

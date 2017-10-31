@@ -1,6 +1,8 @@
 const passphrase = "trumPet_sOng$-4_listenin'to";
 const salt = "thIS_is-NOT";
 
+// Hashing is done by the backend. Passwords are hidden on forms. No need
+// for any of this here.
 function hash (password) {
  	var newPassword = password + salt;
   var token = "";
