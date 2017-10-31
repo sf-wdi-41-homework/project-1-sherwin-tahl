@@ -19,7 +19,7 @@ function calcBMI (user) {
 	return ({'bmi':bmi,'bmiStr':bmiStr});
 }
 
-
+// Why not just an HTML string?
 var resistance = [
 	`Recommend a moderate amount of resistance exercise.  
   Do a variety of exercises, for various body parts.  

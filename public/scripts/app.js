@@ -187,6 +187,7 @@ $(document).ready(function() {
             console.log("cookie: ", userCookie);
         } else {
             console.log(json, "inside render");
+            // Usually you'll handle cookies on the backend, such as in server.js
             setCookie("FITNESS_GURU_ID", `userId=${json.userId}`, 30);
             currentUser = json;
             renderRec(currentUser);
@@ -336,6 +337,7 @@ $(document).ready(function() {
     }
 //Get full name, return first name only.
     function getFirstName(nameIn){
+        // It appears you're concatenating and then splitting??
       nameIn = nameIn.concat(" ");
       nameArray = nameIn.split(" ");
       return nameArray[0];
